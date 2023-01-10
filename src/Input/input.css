@@ -1,0 +1,29 @@
+.btn-notes {
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 4rem;
+    border: 0;
+    border-radius: .5rem;
+    background-color: #E0D149;
+    padding: 1rem;
+    font-size: inherit;
+}
+
+.btn-notes:hover {
+    cursor: pointer;
+    background-color: #eee063;
+    padding: .8rem;
+    transition: background-color linear .2s, padding linear .2s;
+}
+
+.notes-input {
+    font-size: inherit;
+    color: inherit;
+    background-color: #636368;
+    padding: 1rem;
+    border-radius: .5rem;
+    border: none;
+    margin-right: 2rem;
+    margin-top: 4.4rem;
+    outline: #eee063;
+}

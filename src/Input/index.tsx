@@ -1,28 +1,34 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { useState } from 'react';
 import './input.css';
 
-type InputType = {
-  placeholder: string;
-  titleButton: string;
-};
+interface Props {
+  addTodo: AddTodo;
+}
 
-export const Input = (props: InputType) => {
-  const { placeholder, titleButton } = props;
-  const [value, setValue] = useState('');
-
-  const changeHandler = (event: ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
-  };
+export const Input: React.FC<Props> = ({ addTodo }) => {
+  const [text, setText] = useState('');
   return (
     <form>
       <input
         type="text"
         className="notes-input"
-        placeholder={placeholder}
-        onChange={changeHandler}
-        value={value}
+        placeholder="Новая заметка"
+        value={text}
+        onChange={(e) => {
+          setText(e.target.value);
+        }}
       />
-      <button className="btn-notes">{titleButton}</button>
+      <button
+        type="submit"
+        className="btn-notes"
+        onClick={(e) => {
+          e.preventDefault();
+          addTodo(text);
+          setText('');
+        }}
+      >
+        Добавить
+      </button>
     </form>
   );
 };

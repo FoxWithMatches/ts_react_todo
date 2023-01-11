@@ -1,13 +1,16 @@
 import React from 'react';
-import './notesList.css';
+import { NotesListItem } from '../NotesListItem';
 
-export const NotesList = () => {
+interface Props {
+  todos: Todo[];
+}
+
+export const NotesList: React.FC<Props> = ({ todos }) => {
   return (
-    <li className="notes-item">
-      Milk
-      <button className="delete">
-        <i className="fa-solid fa-plus delete-img"></i>
-      </button>
-    </li>
+    <ul className="all-lists">
+      {todos.map((todo) => (
+        <NotesListItem key={todo.text} todo={todo} />
+      ))}
+    </ul>
   );
 };

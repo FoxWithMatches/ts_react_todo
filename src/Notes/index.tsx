@@ -4,28 +4,27 @@ import { Input } from '../Input';
 import { NotesList } from '../NotesList';
 import './notes.css';
 
-const initialTodo: Todo[] = [
-  {
-    text: 'Walk the dog',
-  },
-  {
-    text: 'Write app',
-  },
-];
-
 export const Notes = () => {
-  const [todos, setTodos] = useState(initialTodo);
+  const [todos, setTodos] = useState<Todo[]>([]);
 
   const addTodo: AddTodo = (text: string) => {
     const newTodo = { text };
     setTodos([...todos, newTodo]);
   };
 
+  const removeTodo: removeTodo = (todoNameToRemove: string) => {
+    setTodos(
+      todos.filter((todo) => {
+        return todo.text !== todoNameToRemove;
+      }),
+    );
+  };
+
   return (
     <div className="notes">
       <Header title={'Заметки'} />
-      <NotesList todos={todos} />
-      <Input addTodo={addTodo}/>
+      <NotesList todos={todos} removeTodo={removeTodo} />
+      <Input addTodo={addTodo} />
     </div>
   );
 };

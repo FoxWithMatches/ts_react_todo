@@ -3,3 +3,4 @@ interface Todo {
 }
 
 type AddTodo = (text: string) => void;
+type removeTodo = (text: string) => void;

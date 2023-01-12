@@ -23,10 +23,10 @@ export const Lists = () => {
   return (
     <div className="lists">
       <Header title={'Списки'} />
-      <div className='all-lists'>
+      <div className="all-lists">
         <TodoList todos={todos} removeTodo={removeTodo} />
       </div>
-      <Input addTodo={addTodo} />
+      <Input addTodo={addTodo} placeholder={'Новый список'} labelButton={'+'} />
     </div>
   );
 };

@@ -24,7 +24,7 @@ export const Notes = () => {
     <div className="notes">
       <Header title={'Общие'} />
       <NotesList todos={todos} removeTodo={removeTodo} />
-      <Input addTodo={addTodo} />
+      <Input addTodo={addTodo} placeholder={'Новая заметка'} labelButton={'Добавить'} />
     </div>
   );
 };

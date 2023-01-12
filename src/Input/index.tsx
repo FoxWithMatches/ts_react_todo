@@ -3,16 +3,18 @@ import './input.css';
 
 interface Props {
   addTodo: AddTodo;
+  placeholder: string;
+  labelButton: string;
 }
 
-export const Input: React.FC<Props> = ({ addTodo }) => {
+export const Input: React.FC<Props> = ({ addTodo, placeholder, labelButton }) => {
   const [text, setText] = useState('');
   return (
     <form>
       <input
         type="text"
         className="notes-input"
-        placeholder="Новая заметка"
+        placeholder={placeholder}
         value={text}
         onChange={(e) => {
           setText(e.target.value);
@@ -27,7 +29,7 @@ export const Input: React.FC<Props> = ({ addTodo }) => {
           setText('');
         }}
       >
-        Добавить
+        {labelButton}
       </button>
     </form>
   );

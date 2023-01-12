@@ -1,0 +1,19 @@
+.lists {
+  width: 40%;
+  background-color: #474749;
+  padding-left: 2rem;
+  padding-top: 4.4rem;
+  padding-right: 2rem;
+}
+
+.all-lists {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+}
+
+@media (max-width: 750px) {
+  .lists {
+    display: none;
+  }
+}

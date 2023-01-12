@@ -1,0 +1,48 @@
+.list-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    font-size: inherit;
+    color: inherit;
+    background-color: inherit;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: background-color linear .2s, padding linear .2s;
+}
+
+.list-item:hover {
+    background-color: #636368;
+    padding: .8rem;
+}
+
+.active {
+    background-color: #636368;
+}
+
+.text-item {
+   text-align: left;
+}
+
+.num-item {
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.arrow::after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    z-index: 1;
+    transform: translateY(-50%) rotate(45deg);
+}
+

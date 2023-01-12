@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Header } from '../Header';
+import { TodoList } from '../TodoList';
 import { Input } from '../Input';
-import { NotesList } from '../NotesList';
-import './notes.css';
+import './lists.css';
 
-export const Notes = () => {
+export const Lists = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
 
   const addTodo: AddTodo = (text: string) => {
@@ -21,9 +21,11 @@ export const Notes = () => {
   };
 
   return (
-    <div className="notes">
-      <Header title={'Общие'} />
-      <NotesList todos={todos} removeTodo={removeTodo} />
+    <div className="lists">
+      <Header title={'Списки'} />
+      <div className='all-lists'>
+        <TodoList todos={todos} removeTodo={removeTodo} />
+      </div>
       <Input addTodo={addTodo} />
     </div>
   );

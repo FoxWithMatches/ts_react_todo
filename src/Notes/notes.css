@@ -1,7 +1,16 @@
 .notes {
-    width: 100%;
-    background-color: #363739;
-    padding-left: 2rem;
-    padding-top: 4.4rem;
+  width: 60%;
+  background-color: #363739;
+  padding-left: 2rem;
+  padding-top: 4.4rem;
 }
 
+.all-notes {
+  padding-left: 0;
+}
+
+@media (max-width: 750px) {
+  .notes {
+    width: 100%;
+  }
+}

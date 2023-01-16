@@ -7,12 +7,12 @@ import './notes.css';
 export const Notes = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
 
-  const addTodo: AddTodo = (text: string) => {
+  const addTodo: AddTodo = (text) => {
     const newTodo = { text };
     setTodos([...todos, newTodo]);
   };
 
-  const removeTodo: removeTodo = (todoNameToRemove: string) => {
+  const removeTodo: removeTodo = (todoNameToRemove) => {
     setTodos(
       todos.filter((todo) => {
         return todo.text !== todoNameToRemove;
